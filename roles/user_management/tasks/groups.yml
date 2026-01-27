@@ -1,0 +1,17 @@
+- name: Ensure groups exist
+  ansible.builtin.group:
+    name: "{{ item }}"
+    state: present
+  loop: >-
+    {{
+      final_users
+      | selectattr('state', 'equalto', 'present')
+      | map(attribute='fleet')
+      | flatten
+      | selectattr('hostname', 'equalto', inventory_hostname)
+      | selectattr('groups', 'defined')
+      | map(attribute='groups')
+      | flatten
+      | unique
+    }}
+#  when: users | selectattr('groups', 'defined') | list | length > 0

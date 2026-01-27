@@ -1,0 +1,50 @@
+---
+# vars file for roles/user_management
+users:
+  - username: devuser
+#    state: present
+    fleet:
+#      - hostname: ansible-test
+#        groups: [dev]
+#        sudo: true
+#        shell: /bin/bash
+      - hostname: ansible-test1
+        groups: [dev]
+        sudo: false
+        shell: /bin/bash
+#      - hostname: staging
+#        groups: [qa]
+#        sudo: false
+#        shell: /bin/bash
+#        directories:
+#          - path: /home/apps
+#            owner: devuser
+#            group: dev
+#            mode: "0755"
+
+  - username: qauser
+#    state: present
+    fleet:
+      - hostname: ansible-test
+        groups: [qa]
+        sudo: false
+        shell: /bin/bash
+#      - hostname: ansible-test1
+#        groups: [qa]
+#        sudo: false
+#        shell: /bin/bash
+#      - hostname: gwaramari_dc
+#        groups: [qa]
+#        sudo: false
+#        shell: /bin/bash
+#      - hostname: staging
+#        groups: [qa]
+#        sudo: false
+#        shell: /bin/bash
+
+# ---- SAFETY CONTROLS ----
+authoritative_user_management: false     # MUST be enabled explicitly
+confirm_user_deletion: true              # interactive confirmation
+protected_users:
+  - ansible-test
+  - ansible-test1

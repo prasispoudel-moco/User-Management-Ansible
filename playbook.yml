@@ -1,0 +1,8 @@
+---
+- name: Linux User Management
+  hosts: servers
+  become: yes
+#  vars:
+#    - users
+  roles:
+    - user_management

@@ -1,0 +1,61 @@
+- name: Show users scheduled for deletion
+  ansible.builtin.debug:
+    msg: "User '{{ item }}' will be deleted"
+  loop: "{{ users_to_delete }}"
+#  loop: "{{ lookup('vars', 'users_to_delete', wantlist=True) }}"
+  when:
+    - authoritative_user_management
+    - users_to_delete is defined
+    - users_to_delete | length > 0
+
+- name: Confirm deletion
+  ansible.builtin.pause:
+    prompt: |
+      ⚠️ AUTHORITATIVE USER MANAGEMENT ENABLED
+
+      {{ users_to_delete | length if users_to_delete is iterable and users_to_delete is not string else 1 }} user(s) will be DELETED.
+
+      {% if show_full_user_list | default(false) %}
+      Users:
+      {{ users_to_delete | join('\n') }}
+      {% endif %}
+
+      Type 'yes' to proceed (auto-abort in 30s):
+    echo: yes
+#    seconds: 30
+  register: deletion_confirmation
+  run_once: true
+  delegate_to: localhost
+  when:
+    - authoritative_user_management
+    - confirm_user_deletion
+    - users_to_delete | length > 0
+    - not ansible_check_mode
+
+- name: Set global deletion approval
+  ansible.builtin.set_fact:
+    deletion_approved: "{{ deletion_confirmation.user_input | default('') | lower == 'yes' }}"
+  run_once: true
+
+- name: Abort if not confirmed
+  ansible.builtin.fail:
+    msg: "User deletion aborted by operator"
+  when:
+    - authoritative_user_management
+    - confirm_user_deletion
+    - users_to_delete | length > 0
+    - not ansible_check_mode
+    - not deletion_approved
+#    - deletion_confirmation.user_input | default('') | lower != 'yes'
+
+- name: Delete unmanaged users
+  ansible.builtin.user:
+    name: "{{ item }}"
+    state: absent
+    remove: true
+  loop: "{{ users_to_delete }}"
+#  loop: "{{ lookup('vars', 'users_to_delete', wantlist=True) }}"
+  when:
+    - authoritative_user_management
+    - deletion_approved
+  notify: Remove sudo access for deleted users

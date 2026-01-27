@@ -1,0 +1,7 @@
+---
+# handlers file for roles/user_management
+- name: Remove sudo access for deleted users
+  ansible.builtin.file:
+    path: "/etc/sudoers.d/{{ item }}"
+    state: absent
+  loop: "{{ users_to_delete | default([]) }}"

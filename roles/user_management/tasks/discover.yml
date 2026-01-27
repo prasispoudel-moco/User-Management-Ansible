@@ -1,0 +1,59 @@
+- name: Gather system users
+  ansible.builtin.getent:
+    database: passwd
+
+#- name: Find unmanaged users
+#  ansible.builtin.set_fact:
+#    users_to_delete: >-
+#      {{
+#        getent_passwd
+#        | dict2items
+#        | selectattr('value.2', '>=', 1000)
+#        | rejectattr('key', 'in', desired_users)
+#        | rejectattr('key', 'in', protected_users)
+#        | map(attribute='key')
+#        | list
+#      }}
+- name: Initialize unmanaged users list
+  ansible.builtin.set_fact:
+    unmanaged_users: []
+
+- name: Find unmanaged users
+  ansible.builtin.set_fact:
+    unmanaged_users: "{{ unmanaged_users + [item.key] }}"
+  loop: "{{ getent_passwd | dict2items }}"
+  when:
+    - (item.value[1] | int) >= 1000 and (item.value[1] | int) <= 6000
+    - item.key not in final_users
+    - item.key not in protected_users
+
+- name: Debug unmanaged / protected users
+  ansible.builtin.debug:
+    msg:
+      unmanaged_users: "{{ unmanaged_users }}"
+      protected_users: "{{ protected_users }}"
+
+- name: Show unmanaged ∩ protected
+  debug:
+    msg: "{{ unmanaged_users | intersect(protected_users) }}"
+    msg: "{{ unmanaged_users | map('type_debug') | list }}"
+    msg: "{{ unmanaged_users | difference(protected_users) | map('type_debug') | list }}"
+
+- name: Sanity check unmanaged users
+  ansible.builtin.assert:
+    that:
+      - unmanaged_users | intersect(protected_users) | length == 0
+    fail_msg: >
+      Protected users detected in unmanaged list:
+      {{ unmanaged_users | intersect(protected_users) }}
+
+- name: Create Users to delete list
+  ansible.builtin.set_fact:
+    users_to_delete: >-
+      {{ item
+        | 
+      }}
+  loop: "{{ lookup('vars', 'unmanaged_users', wantlist=True) }}"
+  when:
+    - item is defined
+    - item not in protected_users

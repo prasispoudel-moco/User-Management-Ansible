@@ -1,0 +1,26 @@
+
+---
+# tasks file for roles/user_management
+- name: Validate users variable
+  ansible.builtin.assert:
+    that:
+      - users is iterable
+  tags: always
+
+- import_tasks: build_users.yml
+  tags: always
+
+- import_tasks: groups.yml
+  tags: [groups, provision]
+
+- import_tasks: users.yml
+  tags: [users, provision, deprovision]
+
+- import_tasks: sudo.yml
+  tags: [sudo, provision, cleanup]
+
+#- import_tasks: discover.yml
+#  tags: [audit, cleanup]
+
+- import_tasks: delete.yml
+  tags: [cleanup, deprovision]

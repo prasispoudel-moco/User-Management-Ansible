@@ -1,0 +1,90 @@
+- name: Initialize final user list
+  ansible.builtin.set_fact:
+    final_users: []
+
+- name: Add users present on this host
+  ansible.builtin.set_fact:
+    final_users: "{{ final_users + [item | combine({'state': 'present', 'remove': false})] }}"
+  loop: "{{ users }}"
+  when:
+    - item.fleet is defined
+    - item.fleet
+      | selectattr('hostname', 'equalto', inventory_hostname)
+      | list
+      | length > 0
+
+- name: Add users absent from this host
+  ansible.builtin.set_fact:
+    final_users: "{{ final_users + [item | combine({'state': 'absent', 'remove': true})] }}"
+  loop: "{{ users }}"
+  when:
+    - item.fleet is not defined
+      or
+      item.fleet
+      | selectattr('hostname', 'equalto', inventory_hostname)
+      | list
+      | length == 0
+
+- name: debug
+  ansible.builtin.debug:
+    msg: "{{ final_users }}"
+
+- name: Gather system users
+  ansible.builtin.getent:
+    database: passwd
+
+- name: Initialize unmanaged users list
+  ansible.builtin.set_fact:
+    unmanaged_users: []
+
+- name: Find unmanaged users
+  ansible.builtin.set_fact:
+    unmanaged_users: "{{ unmanaged_users + [item.key] }}"
+  loop: "{{ getent_passwd | dict2items }}"
+  when:
+    - (item.value[1] | int) >= 1000 and (item.value[1] | int) <= 6000
+    - item.key not in final_users
+    - item.key not in protected_users
+
+- name: Debug unmanaged / protected users
+  ansible.builtin.debug:
+    msg:
+      unmanaged_users: "{{ unmanaged_users }}"
+      protected_users: "{{ protected_users }}"
+
+- name: Show unmanaged ∩ protected
+  debug:
+    msg: "{{ unmanaged_users | intersect(protected_users) }}"
+    msg: "{{ unmanaged_users | map('type_debug') | list }}"
+    msg: "{{ unmanaged_users | difference(protected_users) | map('type_debug') | list }}"
+
+- name: Create Users to delete list
+  ansible.builtin.set_fact:
+    users_to_delete: >-
+      {{
+        (final_users
+          | selectattr('state', 'equalto', 'absent')
+          | selectattr('remove', 'equalto', true)
+          | map(attribute='username')
+        )
+        +
+        (unmanaged_users
+          | difference(final_users | map(attribute='username') | list)
+        )
+          | reject('in', protected_users)
+          | flatten
+          | unique
+      }}
+
+- name: Debug unmanaged / protected users
+  ansible.builtin.debug:
+    msg:
+      unmanaged_users: "{{ users_to_delete }}"
+
+- name: Sanity check unmanaged users
+  ansible.builtin.assert:
+    that:
+      - unmanaged_users | intersect(protected_users) | length == 0
+    fail_msg: >
+      Protected users detected in unmanaged list:
+      {{ unmanaged_users | intersect(protected_users) }}
