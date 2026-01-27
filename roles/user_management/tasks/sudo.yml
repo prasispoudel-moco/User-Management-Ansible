@@ -28,13 +28,13 @@
   loop: "{{ users | subelements('fleet') }}"
   when:
     - item.1.username == inventory_hostname
-    - item.1.sudo | default(false)
+    - item.1.sudo | default(false) == 'true'
     - item.0.state | default('present') == 'present'
 
-- name: Remove sudo access when user is absent
+- name: Remove sudo access
   ansible.builtin.file:
-    path: "/etc/sudoers.d/{{ item.username }}"
+    path: "/etc/sudoers.d/{{ item.0.username }}"
     state: absent
-  loop: "{{ users }}"
+  loop: "{{ users | subelements('fleet') }}"
   when:
-    - item.state | default('present') == 'absent'
+    - item.1.sudo | default(false) == 'true'
