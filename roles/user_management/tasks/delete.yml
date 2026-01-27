@@ -8,34 +8,40 @@
     - users_to_delete is defined
     - users_to_delete | length > 0
 
-- name: Confirm deletion
-  ansible.builtin.pause:
-    prompt: |
-      ⚠️ AUTHORITATIVE USER MANAGEMENT ENABLED
-
-      {{ users_to_delete | length if users_to_delete is iterable and users_to_delete is not string else 1 }} user(s) will be DELETED.
-
-      {% if show_full_user_list | default(false) %}
-      Users:
-      {{ users_to_delete | join('\n') }}
-      {% endif %}
-
-      Type 'yes' to proceed (auto-abort in 30s):
-    echo: yes
-#    seconds: 30
-  register: deletion_confirmation
-  run_once: true
-  delegate_to: localhost
-  when:
-    - authoritative_user_management
-    - confirm_user_deletion
-    - users_to_delete | length > 0
-    - not ansible_check_mode
+#- name: Confirm deletion
+#  ansible.builtin.pause:
+#    prompt: |
+#      ⚠️ AUTHORITATIVE USER MANAGEMENT ENABLED
+#
+#      {{ users_to_delete | length if users_to_delete is iterable and users_to_delete is not string else 1 }} user(s) will be DELETED.
+#
+#      {% if show_full_user_list | default(false) %}
+#      Users:
+#      {{ users_to_delete | join('\n') }}
+#      {% endif %}
+#
+#      Type 'yes' to proceed (auto-abort in 30s):
+#    echo: yes
+##    seconds: 30
+#  register: deletion_confirmation
+#  run_once: true
+#  delegate_to: localhost
+#  when:
+#    - authoritative_user_management
+#    - confirm_user_deletion
+#    - users_to_delete | length > 0
+#    - not ansible_check_mode
 
 - name: Set global deletion approval
   ansible.builtin.set_fact:
-    deletion_approved: "{{ deletion_confirmation.user_input | default('') | lower == 'yes' }}"
+    # We check if the input from Semaphore UI matches 'yes'
+    deletion_approved: "{{ semaphore_confirm_delete | default('') | lower == 'yes' }}"
   run_once: true
+
+#- name: Set global deletion approval
+#  ansible.builtin.set_fact:
+#    deletion_approved: "{{ deletion_confirmation.user_input | default('') | lower == 'yes' }}"
+#  run_once: true
 
 - name: Abort if not confirmed
   ansible.builtin.fail:
