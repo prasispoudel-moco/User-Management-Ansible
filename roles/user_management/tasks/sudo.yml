@@ -27,9 +27,8 @@
     mode: '0440'
   loop: "{{ users | subelements('fleet') }}"
   when:
-    - item.1.username == inventory_hostname
+    - item.0.username == inventory_hostname
     - item.1.sudo | default(false) == 'true'
-    - item.0.state | default('present') == 'present'
 
 - name: Remove sudo access
   ansible.builtin.file:
@@ -37,4 +36,4 @@
     state: absent
   loop: "{{ users | subelements('fleet') }}"
   when:
-    - item.1.sudo | default(false) == 'true'
+    - item.1.sudo | default(false) == 'false'
