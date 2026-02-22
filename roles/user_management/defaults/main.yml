@@ -1,8 +1,7 @@
 ---
-# vars file for roles/user_management
+# defaults file for roles/user_management
 users:
   - username: devuser
-#    state: present
     fleet:
 #      - hostname: ansible-test
 #        groups: [dev]
@@ -22,9 +21,8 @@ users:
 #            group: dev
 #            mode: "0755"
 
-  - username: qauser
-#    state: present
-    fleet:
+#  - username: qauser
+#    fleet:
 #      - hostname: ansible-test
 #        groups: [qa]
 #        sudo: false
