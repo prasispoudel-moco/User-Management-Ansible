@@ -7,7 +7,7 @@
     shell: "{{ item.shell | default('/bin/bash') }}"
     groups: "{{ item.groups | default(omit) }}"
     append: "{{ item.groups is defined }}"
-    password: "{{ item.password | default("1234567890") }}"
+    password: "{{ item.password | default('1234567890') }}"
   loop: "{{ final_users }}"
   when: item.state == 'present'
 # - name: Setup SSH authorized keys
