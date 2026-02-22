@@ -4,14 +4,14 @@ users:
   - username: devuser
 #    state: present
     fleet:
-      - hostname: ansible-test
-        groups: [dev]
-        sudo: true
-        shell: /bin/bash
-#      - hostname: ansible-test1
+#      - hostname: ansible-test
 #        groups: [dev]
-#        sudo: false
+#        sudo: true
 #        shell: /bin/bash
+      - hostname: ansible-test1
+        groups: [dev]
+        sudo: false
+        shell: /bin/bash
 #      - hostname: staging
 #        groups: [qa]
 #        sudo: false
@@ -29,10 +29,10 @@ users:
 #        groups: [qa]
 #        sudo: false
 #        shell: /bin/bash
-      - hostname: ansible-test1
-        groups: [qa]
-        sudo: false
-        shell: /bin/bash
+#      - hostname: ansible-test1
+#        groups: [qa]
+#        sudo: false
+#        shell: /bin/bash
 #      - hostname: gwaramari_dc
 #        groups: [qa]
 #        sudo: false
@@ -48,3 +48,4 @@ confirm_user_deletion: true              # interactive confirmation
 protected_users:
   - ansible-test
   - ansible-test1
+  - ansible
