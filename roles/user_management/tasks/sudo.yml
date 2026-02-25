@@ -25,8 +25,7 @@
     owner: root
     group: root
     mode: '0440'
-#  loop: "{{ users | subelements('fleet') }}"
-  loop: "{{ users }}"
+  loop: "{{ users | subelements('fleet', skip_missing=True) }}"
   when:
     - item.0.username == inventory_hostname
     - item.1.sudo | default(false) == 'true'
