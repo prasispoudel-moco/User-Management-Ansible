@@ -37,6 +37,285 @@ users:
         shell: /bin/bash
         password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
 
+  - username: mapdev
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: asset
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: crmsdev
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: devutility
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: erms_temp
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: ig
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: izt
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: map
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: mocodevtv
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: mocov3
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: mpsdev
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: ns 
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: otpdev
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: qrgs
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: sandesh
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: suchit
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: acs4cda
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: ams
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: coupondev
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: devtelecom
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: discovery
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: flightdev
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: igdev
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: mocodevisp
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: mocomanager
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: mps
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: nchl_dev
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: nsdev
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: paras
+    fleet:
+      - hostname: test
+        sudo: true 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: qrgsdev
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: aadish
+    fleet:
+      - hostname: test
+        sudo: true 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: mocodev
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: visitordev
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: visitordev_manager
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: samwek
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: visitor_telecomdev
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: www0
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: prasis
+    fleet:
+      - hostname: test
+        sudo: true 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: aadarsha
+    fleet:
+      - hostname: test
+        sudo: true 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: domestic
+    fleet:
+      - hostname: test
+        sudo: false 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
 #      - hostname: ansible-test1
 #        groups: [qa]
 #        sudo: false
