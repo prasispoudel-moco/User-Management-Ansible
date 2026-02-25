@@ -7,11 +7,11 @@ users:
 #        groups: [dev]
 #        sudo: true
 #        shell: /bin/bash
-      - hostname: ansible-test1
-        groups: [dev]
-        sudo: false
-        shell: /bin/bash
-        password: 1234567890
+#      - hostname: ansible-test1
+#        groups: [dev]
+#        sudo: false
+#        shell: /bin/bash
+#        password: 1234567890
 #      - hostname: staging
 #        groups: [qa]
 #        sudo: false
