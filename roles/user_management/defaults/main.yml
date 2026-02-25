@@ -11,6 +11,7 @@ users:
         groups: [dev]
         sudo: false
         shell: /bin/bash
+        password: 1234567890
 #      - hostname: staging
 #        groups: [qa]
 #        sudo: false
