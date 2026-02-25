@@ -23,17 +23,25 @@ users:
 #            group: dev
 #            mode: "0755"
 
-  - username: qauser
+  - username: yujin
     fleet:
-#      - hostname: ansible-test
+      - hostname: test
+        sudo: true 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+  - username: vivek
+    fleet:
+      - hostname: test
+        sudo: true 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+#      - hostname: ansible-test1
 #        groups: [qa]
 #        sudo: false
 #        shell: /bin/bash
-      - hostname: ansible-test1
-        groups: [qa]
-        sudo: false
-        shell: /bin/bash
-        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+#        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
 #      - hostname: gwaramari_dc
 #        groups: [qa]
 #        sudo: false
