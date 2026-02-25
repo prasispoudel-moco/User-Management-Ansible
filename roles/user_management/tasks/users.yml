@@ -8,7 +8,7 @@
     groups: "{{ item.0.groups | default(omit) }}"
     append: "{{ item.0.groups is defined }}"
 #    password: "{{ item.password | default('1234567890') | password_hash('sha512') }}"
-    password: "{{ item.1.password }}"
+    password: "{{ item.1.password | password_hash('sha512') }}"
     update_password: on_create
   loop: "{{ final_users | subelements('fleet') }}"
   when: item.0.state == 'present'
