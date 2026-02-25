@@ -1,7 +1,7 @@
 ---
 # defaults file for roles/user_management
 users:
-  - username: devuser
+#  - username: devuser
 #    fleet:
 #      - hostname: ansible-test
 #        groups: [dev]
@@ -22,16 +22,17 @@ users:
 #            group: dev
 #            mode: "0755"
 
-#  - username: qauser
-#    fleet:
+  - username: qauser
+    fleet:
 #      - hostname: ansible-test
 #        groups: [qa]
 #        sudo: false
 #        shell: /bin/bash
-#      - hostname: ansible-test1
-#        groups: [qa]
-#        sudo: false
-#        shell: /bin/bash
+      - hostname: ansible-test1
+        groups: [qa]
+        sudo: false
+        shell: /bin/bash
+        password: 1234567890
 #      - hostname: gwaramari_dc
 #        groups: [qa]
 #        sudo: false
