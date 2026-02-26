@@ -18,13 +18,23 @@
 #  when:
 #    - item.state | default('present') == 'absent'
 
+#- name: Configure sudo access
+#  ansible.builtin.copy:
+#    dest: "/etc/sudoers.d/{{ item.0.username }}"
+#    content: "{{ item.0.username }} ALL=(ALL) NOPASSWD:ALL"
+#    owner: root
+#    group: root
+#    mode: '0440'
+#  loop: "{{ users | subelements('fleet') }}"
+#  when:
+#    - item.0.username == inventory_hostname
+#    - item.1.sudo | default(false) == 'true'
+
 - name: Configure sudo access
-  ansible.builtin.copy:
-    dest: "/etc/sudoers.d/{{ item.0.username }}"
-    content: "{{ item.0.username }} ALL=(ALL) NOPASSWD:ALL"
-    owner: root
-    group: root
-    mode: '0440'
+  ansible.builtin.user:
+    name: "{{ item.0.username }}"
+    groups: sudo
+    append: true 
   loop: "{{ users | subelements('fleet') }}"
   when:
     - item.0.username == inventory_hostname
