@@ -54,9 +54,10 @@
 
 - name: Show unmanaged ∩ protected
   debug:
-    msg: "{{ unmanaged_users | intersect(protected_users) }}"
-    msg: "{{ unmanaged_users | map('type_debug') | list }}"
-    msg: "{{ unmanaged_users | difference(protected_users) | map('type_debug') | list }}"
+    msg: 
+      - "{{ unmanaged_users | intersect(protected_users) }}"
+      - "{{ unmanaged_users | map('type_debug') | list }}"
+      - "{{ unmanaged_users | difference(protected_users) | map('type_debug') | list }}"
 
 - name: Create Users to delete list
   ansible.builtin.set_fact:
