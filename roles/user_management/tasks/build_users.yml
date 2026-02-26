@@ -56,7 +56,7 @@
   debug:
     msg: 
       - "{{ unmanaged_users | intersect(protected_users) }}"
-      - "{{ unmanaged_users | map('type_debug') | list }}"
+#      - "{{ unmanaged_users | map('type_debug') | list }}"
       - "{{ unmanaged_users | difference(protected_users) | map('type_debug') | list }}"
 
 - name: Create Users to delete list
