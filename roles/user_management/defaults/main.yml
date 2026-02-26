@@ -5,8 +5,9 @@ users:
   - username: devuser 
     fleet:
       - hostname: ansible-test1
-        sudo: false 
-        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+        shell: /bin/bash
+        sudo: true 
+        password: $6$uFzNDEJpCsrsa2.i$81jRYLZfg2o6.AxEQ/uTOCY.mmcOeZYLEDJiAxo0vFtazI./Br4EAWl.S4D.lvbrkHl4HeeUnwrQVQrGJB/670
 
 #      - hostname: staging
 #        groups: [qa]
