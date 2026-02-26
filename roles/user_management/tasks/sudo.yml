@@ -40,11 +40,33 @@
     - item.1.hostname == inventory_hostname
     - item.1.sudo | default(false) == true
 
-- name: Remove sudo access
-  ansible.builtin.file:
-    path: "/etc/sudoers.d/{{ item.0.username }}"
-    state: absent
+- name: Remove user from sudo group
+  ansible.builtin.user:
+    name: "{{ item.0.username }}"
+    groups: sudo
+    state: present
+    append: yes
+    groups_action: remove
   loop: "{{ users | subelements('fleet') }}"
   when:
     - item.1.hostname == inventory_hostname
-    - item.1.sudo | default(false) == false
+    - not (item.1.sudo | default(false))
+
+#- name: Remove sudo access
+#  ansible.builtin.command: gpasswd -d "{{ item.0.username }}" sudo
+#  register: result
+#  changed_when: "'is not a member of' not in result.stderr"
+#  failed_when: false  # Prevents failure if the user wasn't in the group
+#  loop: "{{ users | subelements('fleet') }}"
+#  when:
+#    - item.1.hostname == inventory_hostname
+#    - item.1.sudo | default(false) == false
+
+#- name: Remove sudo access
+#  ansible.builtin.file:
+#    path: "/etc/sudoers.d/{{ item.0.username }}"
+#    state: absent
+#  loop: "{{ users | subelements('fleet') }}"
+#  when:
+#    - item.1.hostname == inventory_hostname
+#    - item.1.sudo | default(false) == false
