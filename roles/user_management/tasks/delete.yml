@@ -48,7 +48,7 @@
     msg: "User deletion aborted by operator"
   when:
     - authoritative_user_management
-    - confirm_user_deletion
+#    - confirm_user_deletion
     - users_to_delete | length > 0
     - not ansible_check_mode
     - not deletion_approved
