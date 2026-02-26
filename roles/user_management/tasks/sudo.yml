@@ -41,7 +41,7 @@
     - item.1.sudo | default(false) == true
 
 - name: Remove sudo access
-  ansible.builtin.command: "gpasswd -d "{{ item.0.username }}" sudo"
+  ansible.builtin.command: 'gpasswd -d "{{ item.0.username }}" sudo'
   register: gpasswd_res
 #  changed_when: "'is not a member of' not in result.stderr"
   changed_when: "'removing user' in gpasswd_res.stdout or 'Removing user' in gpasswd_res.stdout"
