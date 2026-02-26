@@ -64,4 +64,4 @@
   when:
     - authoritative_user_management
     - deletion_approved
-  notify: Remove sudo access for deleted users
+#  notify: Remove sudo access for deleted users
