@@ -13,7 +13,7 @@ users:
     fleet:
       - hostname: ansible-test1
         shell: /bin/bash
-        sudo: false 
+        sudo: true 
         password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
 
 #      - hostname: staging
