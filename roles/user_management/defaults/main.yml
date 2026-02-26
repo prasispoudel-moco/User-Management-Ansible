@@ -325,8 +325,6 @@ users:
 
 # ---- SAFETY CONTROLS ----
 authoritative_user_management: false     # MUST be enabled explicitly
-confirm_user_deletion: true              # interactive confirmation
+confirm_user_deletion: false              # interactive confirmation
 protected_users:
-  - ansible-test
-  - ansible-test1
   - ansible
