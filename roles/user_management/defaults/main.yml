@@ -7,7 +7,14 @@ users:
       - hostname: ansible-test1
         shell: /bin/bash
         sudo: true 
-        password: $6$uFzNDEJpCsrsa2.i$81jRYLZfg2o6.AxEQ/uTOCY.mmcOeZYLEDJiAxo0vFtazI./Br4EAWl.S4D.lvbrkHl4HeeUnwrQVQrGJB/670
+        password: $6$De5quNmw4cdRXrnW$maiWojT9STjNWpLPYZdgZChPgnlsSiZfIKNKDRn1B3UNZhEraZVJffEHVWfuhcYA2957XluEpEjfK39GDcVP71
+        
+  - username: qauser 
+    fleet:
+      - hostname: ansible-test1
+        shell: /bin/bash
+        sudo: false 
+        password: $6$De5quNmw4cdRXrnW$maiWojT9STjNWpLPYZdgZChPgnlsSiZfIKNKDRn1B3UNZhEraZVJffEHVWfuhcYA2957XluEpEjfK39GDcVP71
 
 #      - hostname: staging
 #        groups: [qa]
