@@ -37,7 +37,7 @@
     append: true 
   loop: "{{ users | subelements('fleet') }}"
   when:
-    - item.1.sudo | default(false) == 'true'
+    - item.1.sudo | default(false) == true
 
 - name: Remove sudo access
   ansible.builtin.file:
@@ -45,4 +45,4 @@
     state: absent
   loop: "{{ users | subelements('fleet') }}"
   when:
-    - item.1.sudo | default(false) == 'false'
+    - item.1.sudo | default(false) == false
