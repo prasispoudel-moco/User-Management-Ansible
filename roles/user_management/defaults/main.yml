@@ -2,17 +2,7 @@
 # defaults file for roles/user_management
 # password is 1234567890
 users:
-#  - username: devuser
-#    fleet:
-#      - hostname: ansible-test
-#        groups: [dev]
-#        sudo: true
-#        shell: /bin/bash
-#      - hostname: ansible-test1
-#        groups: [dev]
-#        sudo: false
-#        shell: /bin/bash
-#        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
 #      - hostname: staging
 #        groups: [qa]
 #        sudo: false
