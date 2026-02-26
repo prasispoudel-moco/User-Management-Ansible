@@ -4,7 +4,7 @@
   ansible.builtin.user:
     name: "{{ item.0.username }}"
     state: "{{ item.0.state | default('present') }}"
-    shell: "{{ item.1.shell | default('/bin/bash') }}"
+#    shell: "{{ item.1.shell | default('/bin/bash') }}"
     groups: "{{ item.0.groups | default(omit) }}"
     append: "{{ item.0.groups is defined }}"
 #    password: "{{ item.password | default('1234567890') | password_hash('sha512') }}"

@@ -268,13 +268,6 @@ users:
         shell: /bin/bash
         password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
 
-  - username: visitordev_manager
-    fleet:
-      - hostname: test
-        sudo: false 
-        shell: /bin/bash
-        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
-
   - username: samwek
     fleet:
       - hostname: test
