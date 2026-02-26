@@ -37,7 +37,6 @@
     append: true 
   loop: "{{ users | subelements('fleet') }}"
   when:
-    - item.0.username == inventory_hostname
     - item.1.sudo | default(false) == 'true'
 
 - name: Remove sudo access
