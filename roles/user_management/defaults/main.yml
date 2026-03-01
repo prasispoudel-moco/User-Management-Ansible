@@ -57,6 +57,11 @@ users:
         shell: /bin/bash
         password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
 
+      - hostname: gwaramari-stag
+        sudo: true 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
   - username: vivek
     fleet:
       - hostname: test
@@ -250,6 +255,11 @@ users:
         shell: /bin/bash
         password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
 
+      - hostname: gwaramari-stag
+        sudo: true 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
   - username: flightdev
     fleet:
       - hostname: test
@@ -321,6 +331,11 @@ users:
         shell: /bin/bash
         password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
 
+      - hostname: gwaramari-stag
+        sudo: true 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
   - username: qrgsdev
     fleet:
       - hostname: test
@@ -341,6 +356,11 @@ users:
         password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
 
       - hostname: lakhamari-stag
+        sudo: true 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+      - hostname: gwaramari-stag
         sudo: true 
         shell: /bin/bash
         password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
@@ -411,6 +431,11 @@ users:
         shell: /bin/bash
         password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
 
+      - hostname: gwaramari-stag
+        sudo: true 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
   - username: aadarsha
     fleet:
       - hostname: test
@@ -428,6 +453,11 @@ users:
         shell: /bin/bash
         password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
 
+      - hostname: gwaramari-stag
+        sudo: true 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
   - username: aaditya
     fleet:
       - hostname: sinkamari-stag
@@ -436,6 +466,11 @@ users:
         password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
 
       - hostname: lakhamari-stag
+        sudo: true 
+        shell: /bin/bash
+        password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
+
+      - hostname: gwaramari-stag
         sudo: true 
         shell: /bin/bash
         password: $6$J94bayd/7WTTLQia$1UvaaF1XTxBqV7roPosUaBUQ5dGb1IgYcvHlN6i9c9jt.9vnYjH7tZnT8i280zeFJQdj6KplLFCUQKcAOg0LV/
