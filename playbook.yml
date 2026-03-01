@@ -2,7 +2,5 @@
 - name: Linux User Management
   hosts: servers
   become: yes
-  vars:
-    ansible_python_interpreter: /usr/bin/python3
   roles:
     - user_management
